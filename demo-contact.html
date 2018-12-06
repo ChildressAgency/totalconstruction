@@ -26,7 +26,7 @@
 </head>
 
 <body>
-  <section id="header">
+  <section class="header">
     <div class="masthead">
       <div class="container-fluid">
         <div class="phone-email">
@@ -68,116 +68,11 @@
     </nav>
   </section>
 
-  <div id="quick-link-tab">
-    <a href="#" class="quick-link-item quick-link-quote">Request a Quote</a>
-    <a href="#" class="quick-link-item quick-link-email">Email Us</a>
-    <a href="#" class="quick-link-item quick-link-call">Call Us</a>
-  </div>
-
-  <section id="hp-hero" class="hero" style="background-image:url(images/trusses.jpg); background-position:center bottom;">
+  <header class="page-title">
     <div class="container">
-      <div class="hero-caption">
-        <h1>30 Years of Quality Construction</h1>
-        <div class="inline-btns">
-          <a href="#" class="btn-main">About Us</a>
-          <a href="#" class="btn-main">Gallery</a>
-        </div>
-      </div>
+      <h1>Contact Us</h1>
     </div>
-    <div class="bg-overlay"></div>
-  </section>
-
-  <section id="hp-services">
-    <div class="container">
-      <div class="row">
-        <div class="col-sm-4">
-          <div class="service-card">
-            <img src="images/empty-warehouse.jpg" class="img-responsive center-block" alt="Empty Warehouse" />
-            <div class="service-card-caption">
-              <h2>Pre-Engineered Metal Buildings</h2>
-              <p>Pre-Engineered Metal Buildings are a great solution for modern building projects. They are quick to install, durable, cost efficient and customizable.</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-sm-4">
-          <div class="service-card">
-            <img src="images/warehouse-outside.jpg" class="img-responsive center-block" alt="Front of building" />
-            <div class="service-card-caption">
-              <h2>General Contracting</h2>
-              <p>Total Construction Services, Inc. is a full-service general contractor. Our organization and communication skills ensure that projects are completed on schedule and to your satisfaction.</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-sm-4">
-          <div class="service-card">
-            <img src="images/barn.jpg" class="img-responsive center-block" alt="Pole Barn" />
-            <div class="service-card-caption">
-              <h2>Pole Barns</h2>
-              <p>Pole Barns are versatile buildings that are built using a technique called post-frame construction, which refers to highly engineered wood-framed buildings that can be built with a variety of exterior options and design flexibility.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <a href="#" class="btn-main">Our Services</a>
-    </div>
-  </section>
-
-  <section id="hp-about" style="background-image:url(images/storage-building.jpg); background-position:center center;">
-    <div class="container">
-      <div class="hp-about">
-        <p><span class="block-font">TOTAL CONSTRUCTION SERVICES, INC.</span> is a general contractor specializing in the design and construction of pre-engineered metal buildings. We are proud to be an authorized dealer/builder for American Buildings and Ceco Building Systems, two fo the leading metal building suppliers in the country.</p>
-        <a href="#" class="btn-main btn-alt">About Us</a>
-      </div>
-    </div>
-  </section>
-
-  <section id="hp-guarantees">
-    <div class="container">
-      <article>
-        <h2>Our Guarantees to get the Job Done Right</h2>
-        <p>We pride ourselves on the values we apply everyday to every job to make sure we provide our customers with the highest quality product.</p>
-      </article>
-      <div class="row badges">
-        <div class="col-sm-3">
-          <div class="badge">
-            <img src="images/ribbon-hex-icon.png" class="img-responsive center-block" alt="Quality Craftsmanship Badge" />
-            <h3>Quality Craftsmanship</h3>
-          </div>
-        </div>
-        <div class="col-sm-3">
-          <div class="badge">
-            <img src="images/clock-hex-icon.png" class="img-responsive center-block" alt="On Schedule Badge" />
-            <h3>On Schedule</h3>
-          </div>
-        </div>
-        <div class="col-sm-3">
-          <div class="badge">
-            <img src="images/checkmark-hex-icon.png" class="img-responsive center-block" alt="Honest & Reliable Badge" />
-            <h3>Honest & Reliable</h3>
-          </div>
-        </div>
-        <div class="col-sm-3">
-          <div class="badge">
-            <img src="images/calculator-hex-icon.png" class="img-responsive center-block" alt="Great Value Badge" />
-            <h3>Great Value</h3>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="hp-service-areas" style="background-image:url(images/unfinished-roof.jpg); background-position:center center;">
-    <div class="container">
-      <div class="service-areas">
-        <img src="images/virginia.png" class="img-responsive center-block" alt="Virginia" />
-        <div class="service-areas-caption">
-          <h3>Our Service Areas</h3>
-          <p>Happy to be serving Northern Virginia and the surrounding areas of Fredericksburg and Richmond.</p>
-        </div>
-      </div>
-    </div>
-    <div class="bg-overlay"></div>
-  </section>
+  </header>
 
   <section class="contact">
     <div class="container-fluid container-sm-height">
@@ -218,13 +113,82 @@
             </div>
             <div class="form-group">
               <label for="message" class="sr-only">Message</label>
-              <textarea rows="4" name="message" class="form-control" placeholder="Message"></textarea>
+              <textarea name="message" class="form-control" placeholder="Message"></textarea>
             </div>
             <div class="form-group">
               <input type="submit" class="btn-main btn-alt" value="Submit" />
             </div>
           </div>
           <div class="contact-side-overlay"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="request-quote">
+    <div class="container">
+      <div class="request-quote-form">
+        <h2 class="block-font">Request a Quote</h2>
+        <div class="form-group">
+          <label for="rq-fname" class="sr-only">First Name</label>
+          <input type="text" name="rq-fname" class="form-control" placeholder="First Name*" />
+        </div>
+        <div class="form-group">
+          <label for="rq-lname" class="sr-only">Last Name</label>
+          <input type="text" name="rq-lname" class="form-control" placeholder="Last Name*" />
+        </div>
+        <div class="form-group">
+          <label for="rq-email" class="sr-only">Email</label>
+          <input type="email" name="rq-email" class="form-control" placeholder="Email*" />
+        </div>
+        <div class="form-group">
+          <label for="rq-phone" class="sr-only">Phone Number</label>
+          <input type="tel" name="rq-phone" class="form-control" placeholder="Phone Number" />
+        </div>
+        <div class="form-group">
+          <label for="rq-service" class="sr-only">Service Interest</label>
+          <input type="text" name="rq-service" class="form-control" placeholder="Service Interest" />
+        </div>
+        <div class="form-group">
+          <label for="rq-build-type" class="control-label">Type of Build</label>
+          <select name="rq-build-type" class="form-control" placeholder="Type of Build">
+            <option value="1">Build Type 1</option>
+            <option value="2">Build Type 2</option>
+            <option value="3">Build Type 3</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="rq-completion-date" class="control-label">Projected Completion Date</label>
+          <input type="date" name="rq-completion-date" class="form-control" placeholder="Projected Completion Date" />
+        </div>
+        <div class="form-group text-left">
+          <span class="wpcf7-form-control-wrap ">
+            <span class="wpcf7-form-control wpcf7-radio" id="residential">
+              <span class="wpcf7-list-item first">
+                <label>
+                  <input type="checkbox" name="rq-type[]" value="Residential" />
+                  <span class="wpcf7-list-item-label">Residential</span>
+                </label>
+              </span>
+            </span>
+          </span>
+          <span class="wpcf7-form-control-wrap ">
+            <span class="wpcf7-form-control wpcf7-radio" id="commercial">
+              <span class="wpcf7-list-item first">
+                <label>
+                  <input type="checkbox" name="rq-type[]" value="Commercial" />
+                  <span class="wpcf7-list-item-label">Commercial</span>
+                </label>
+              </span>
+            </span>
+          </span>
+        </div>
+        <div class="form-group">
+          <label for="rq-message" class="sr-only">Message</label>
+          <textarea rows="6" name="message" class="form-control" placeholder="Message"></textarea>
+        </div>
+        <div class="form-group">
+          <input type="submit" class="btn-main" value="Submit" />
         </div>
       </div>
     </div>
