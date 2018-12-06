@@ -26,7 +26,7 @@
 </head>
 
 <body>
-  <div class="header">
+  <section id="header">
     <div class="masthead">
       <div class="container-fluid">
         <div class="phone-email">
@@ -66,9 +66,15 @@
         </div>
       </div>
     </nav>
+  </section>
+
+  <div id="quick-link-tab">
+    <a href="#" class="quick-link-item quick-link-quote">Request a Quote</a>
+    <a href="#" class="quick-link-item quick-link-email">Email Us</a>
+    <a href="#" class="quick-link-item quick-link-call">Call Us</a>
   </div>
 
-  <div id="hp-hero" class="hero" style="background-image:url(images/trusses.jpg); background-position:center bottom;">
+  <section id="hp-hero" class="hero" style="background-image:url(images/trusses.jpg); background-position:center bottom;">
     <div class="container">
       <div class="hero-caption">
         <h1>30 Years of Quality Construction</h1>
@@ -79,9 +85,9 @@
       </div>
     </div>
     <div class="bg-overlay"></div>
-  </div>
+  </section>
 
-  <div id="hp-services">
+  <section id="hp-services">
     <div class="container">
       <div class="row">
         <div class="col-sm-4">
@@ -114,18 +120,18 @@
       </div>
       <a href="#" class="btn-main">Our Services</a>
     </div>
-  </div>
+  </section>
 
-  <div id="hp-about" style="background-image:url(images/storage-building.jpg); background-position:center center;">
+  <section id="hp-about" style="background-image:url(images/storage-building.jpg); background-position:center center;">
     <div class="container">
       <div class="hp-about">
         <p><span class="block-font">TOTAL CONSTRUCTION SERVICES, INC.</span> is a general contractor specializing in the design and construction of pre-engineered metal buildings. We are proud to be an authorized dealer/builder for American Buildings and Ceco Building Systems, two fo the leading metal building suppliers in the country.</p>
         <a href="#" class="btn-main btn-alt">About Us</a>
       </div>
     </div>
-  </div>
+  </section>
 
-  <div id="hp-guarantees">
+  <section id="hp-guarantees">
     <div class="container">
       <article>
         <h2>Our Guarantees to get the Job Done Right</h2>
@@ -158,9 +164,9 @@
         </div>
       </div>
     </div>
-  </div>
+  </section>
 
-  <div id="hp-service-areas" style="background-image:url(images/unfinished-roof.jpg); background-position:center center;">
+  <section id="hp-service-areas" style="background-image:url(images/unfinished-roof.jpg); background-position:center center;">
     <div class="container">
       <div class="service-areas">
         <img src="images/virginia.png" class="img-responsive center-block" alt="Virginia" />
@@ -171,88 +177,86 @@
       </div>
     </div>
     <div class="bg-overlay"></div>
-  </div>
+  </section>
 
-  <footer id="footer">
-    <div class="footer-contact">
-      <div class="container-fluid container-sm-height">
-        <div class="row row-sm-height">
-          <div class="col-sm-6 col-sm-height icon-side">
-            <div class="contact-card">
-              <a href="mailto:total@cox.net" class="email">total@cox.net</a>
+  <section class="contact">
+    <div class="container-fluid container-sm-height">
+      <div class="row row-sm-height">
+        <div class="col-sm-6 col-sm-height icon-side">
+          <div class="contact-card">
+            <a href="mailto:total@cox.net" class="email">total@cox.net</a>
+          </div>
+          <div class="contact-card">
+            <a href="tel:540.374.0537" class="phone">540.374.0537</a>
+          </div>
+          <div class="contact-card">
+            <a href="#" class="address">Address</a>
+          </div>
+        </div>
+        <div class="col-sm-6 col-sm-height contact-form-side" style="background-image:url(images/iron-framing.jpg); background-position:center center;">
+          <div class="contact-form">
+            <h3>Contact Us Directly</h3>
+            <div class="form-group">
+              <label for="fname" class="sr-only">First Name</label>
+              <input type="text" class="form-control" name="fname" placeholder="First Name*" />
             </div>
-            <div class="contact-card">
-              <a href="tel:540.374.0537" class="phone">540.374.0537</a>
+            <div class="form-group">
+              <label for="lname" class="sr-only">Last Name</label>
+              <input type="text" class="form-control" name="lname" placeholder="Last Name*" />
             </div>
-            <div class="contact-card">
-              <a href="#" class="address">Address</a>
+            <div class="form-group">
+              <label for="your-email" class="sr-only">Email</label>
+              <input type="email" class="form-control" name="your-email" placeholder="Email*" />
+            </div>
+            <div class="form-group">
+              <label for="phone" class="sr-only">Phone Number</label>
+              <input type="tel" class="form-control" name="phone" placeholder="Phone Number" />
+            </div>
+            <div class="form-group">
+              <label for="service" class="sr-only">Service Interest</label>
+              <input type="text" class="form-control" name="service" placeholder="Service Interest" />
+            </div>
+            <div class="form-group">
+              <label for="message" class="sr-only">Message</label>
+              <textarea name="message" class="form-control" placeholder="Message"></textarea>
+            </div>
+            <div class="form-group">
+              <input type="submit" class="btn-main btn-alt" value="Submit" />
             </div>
           </div>
-          <div class="col-sm-6 col-sm-height contact-form-side" style="background-image:url(images/iron-framing.jpg); background-position:center center;">
-            <div class="contact-form">
-              <h3>Contact Us Directly</h3>
-              <div class="form-group">
-                <label for="fname" class="sr-only">First Name</label>
-                <input type="text" class="form-control" name="fname" placeholder="First Name*" />
-              </div>
-              <div class="form-group">
-                <label for="lname" class="sr-only">Last Name</label>
-                <input type="text" class="form-control" name="lname" placeholder="Last Name*" />
-              </div>
-              <div class="form-group">
-                <label for="your-email" class="sr-only">Email</label>
-                <input type="email" class="form-control" name="your-email" placeholder="Email*" />
-              </div>
-              <div class="form-group">
-                <label for="phone" class="sr-only">Phone Number</label>
-                <input type="tel" class="form-control" name="phone" placeholder="Phone Number" />
-              </div>
-              <div class="form-group">
-                <label for="service" class="sr-only">Service Interest</label>
-                <input type="text" class="form-control" name="service" placeholder="Service Interest" />
-              </div>
-              <div class="form-group">
-                <label for="message" class="sr-only">Message</label>
-                <textarea name="message" class="form-control" placeholder="Message"></textarea>
-              </div>
-              <div class="form-group">
-                <input type="submit" class="btn-main btn-alt" value="Submit" />
-              </div>
-            </div>
-            <div class="contact-side-overlay"></div>
-          </div>
+          <div class="contact-side-overlay"></div>
         </div>
       </div>
     </div>
+  </section>
 
-    <div id="lower-footer">
-      <div class="container">
-        <div class="row">
-          <div class="col-sm-3">
-            <img src="images/logo-small.png" class="img-responsive" alt="Total Construction Services, Inc. Logo" />
-          </div>
-          <div class="col-sm-6">
-            <nav id="footer-nav">
-              <ul class="nav nav-justified">
-                <li><a href="#">Home</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Services</a></li>
-                <li><a href="#">Contact</a></li>
-              </ul>
-            </nav>
-          </div>
-          <div class="col-sm-3">
-            <div class="social">
-              <a href="#" class="facebook text-hide">Facebook</a>
-            </div>
-          </div>
+  <footer id="footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-3">
+          <img src="images/logo-small.png" class="img-responsive" alt="Total Construction Services, Inc. Logo" />
         </div>
-        <div class="copyright">
-          <p>&copy; 2018 Total Construction Services, Inc.</p>
-          <p>website created by <a href="https://childressagency.com" target="_blank">The Childress Agency</a></p>
+        <div class="col-sm-6">
+          <nav id="footer-nav">
+            <ul class="nav nav-justified">
+              <li><a href="#">Home</a></li>
+              <li><a href="#">About</a></li>
+              <li><a href="#">Services</a></li>
+              <li><a href="#">Contact</a></li>
+            </ul>
+          </nav>
+        </div>
+        <div class="col-sm-3">
+          <div class="social">
+            <a href="#" class="facebook text-hide">Facebook</a>
+          </div>
         </div>
       </div>
-    </nav>
+      <div class="copyright">
+        <p>&copy; 2018 Total Construction Services, Inc.</p>
+        <p>website created by <a href="https://childressagency.com" target="_blank">The Childress Agency</a></p>
+      </div>
+    </div>
   </footer>
 
 </body>
