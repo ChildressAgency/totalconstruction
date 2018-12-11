@@ -717,6 +717,22 @@ article.service h2{
   line-height:1.2em;
 }
 
+.testimonial{
+  margin-top:60px;
+}
+.testimonial p{
+  line-height:1.2em;
+}
+.testimonial footer{
+  font-family:Factoria, serif;
+  font-size:24px;
+  text-transform:uppercase;
+}
+.testimonial footer span{
+  display:block;
+  color:#777;
+}
+
 
 @media (max-width:767px){
   .masthead .phone-email{
@@ -747,15 +763,21 @@ article.service h2{
   .hp-about{
     font-size:18px;
   }
-  .footer-contact .icon-side{
+  .contact .icon-side{
     padding-top:1px;
   }
-  .footer-contact .contact-form-side{
+  .contact .contact-form-side{
     padding-top:40px;
     padding-bottom:40px;
   }
   #quick-link-tab{
     display:none;
+  }
+  .testimonial .col-xs-1{
+    padding-right:0;
+  }
+  .page-title h1{
+    font-size:30px;
   }
 }
 
