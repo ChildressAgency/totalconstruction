@@ -627,6 +627,43 @@ article h2{
   margin-left:25px;
 }
 
+.gallery-nav{
+  display:inline-block;
+  margin-bottom:40px;
+}
+.gallery-nav .form-control{
+  background-color:#fff200;
+  font-family:Factoria, serif;
+  font-size:20px;
+  color:#000;
+  text-transform:uppercase;
+}
+.gallery.slick-slider{
+  margin:25px;
+}
+.slick-slide img{
+  margin-left:auto;
+  margin-right:auto;
+}
+.gallery-arrow.slick-prev::before,
+.gallery-arrow.slick-next::before{
+  font-family:AvenirNext, sans-serif;
+  color:#000;
+  font-weight:bold;
+  font-size:30px;
+  background-color:#fff200;
+  padding:0px 6px;
+}
+.gallery-arrow.slick-prev::before{
+  content:"<";
+}
+.gallery-arrow.slick-next::before{
+  content:">";
+}
+.gallery-arrow.slick-prev{
+  left:-37px;
+}
+
 
 @media (max-width:767px){
   .masthead .phone-email{
