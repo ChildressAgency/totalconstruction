@@ -27,9 +27,11 @@
       <div class="container-fluid">
         <div class="phone-email">
           <?php 
-            $phone = get_field('phone_number', 'option');
-            $email = get_field('email', 'option');
-            $facebook = get_field('facebook', 'option');
+            $contact_page = get_page_by_path('contact');
+            $contact_page_id = $contact_page->ID;
+            $phone = get_field('phone_number', $contact_page_id);
+            $email = get_field('email', $contact_page_id);
+            $facebook = get_field('facebook', $contact_page_id);
           ?>
           <a href="tel:<?php echo $phone; ?>" class="phone"><?php echo $phone; ?></a>
           <br class="visible-xs" />
