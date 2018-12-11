@@ -62,6 +62,7 @@ function totalconstruction_styles(){
 add_action('after_setup_theme', 'totalconstruction_setup');
 function totalconstruction_setup(){
   add_theme_support('post-thumbnails');
+  add_theme_support('custom-logo');
 
   register_nav_menus(array(
     'header-nav' => 'Header Navigation',
@@ -79,4 +80,18 @@ if(function_exists('acf_add_options_page')){
     'capability' => 'edit_posts',
     'redirect' => false
   ));
+}
+
+function totalconstruction_header_fallback_menu(){ ?>
+  <div id="navbar" class="navbar-collapse collapse">
+    <ul class="nav navbar-nav navbar-right">
+      <li <?php if(is_front_page()){ echo ' class="active"'; } ?>><a href="<?php echo home_url(); ?>">Home</a></li>
+      <li <?php if(is_page('about')){ echo ' class="active"'; } ?>><a href="<?php echo home_url('about'); ?>">About</a></li>
+      <li <?php if(is_page('services')){ echo ' class="active"'; } ?>><a href="<?php echo home_url('services'); ?>">Services</a></li>
+      <li <?php if(is_page('gallery')){ echo ' class="active"'; } ?>><a href="<?php echo home_url('gallery'); ?>">Gallery</a></li>
+      <li <?php if(is_page('testimonials')){ echo ' class="active"'; } ?>><a href="<?php echo home_url('testimonials'); ?>">Testimonials</a></li>
+      <li <?php if(is_page('contact')){ echo ' class="active"'; } ?>><a href="<?php echo home_url('contact'); ?>">Contact</a></li>
+    </ul>
+  </div>
+<?php
 }
