@@ -91,26 +91,7 @@
     <a href="tel:<?php echo $phone; ?>" class="quick-link-item quick-link-call">Call Us</a>
   </div>
 
-  <?php if(is_front_page()): ?>
-    <section id="hp-hero" class="hero" style="background-image:url(<?php the_field('hero_background_image'); ?>); <?php the_field('hero_background_image_css'); ?>">
-      <div class="container">
-        <div class="hero-caption">
-          <h1><?php the_field('hero_caption'); ?></h1>
-          <div class="inline-btns">
-            <?php 
-              $button_one = get_field('button_one'); 
-              $button_two = get_field('button_two');
-              if($button_one): ?>
-                <a href="<?php echo $button_one['url']; ?>" class="btn-main"><?php echo $button_one['title']; ?></a>
-            <?php endif; if($button_two): ?>
-              <a href="<?php echo $button_two['url']; ?>" class="btn-main"><?php echo $button_two['title']; ?></a>
-            <?php endif; ?>
-          </div>
-        </div>
-      </div>
-      <div class="bg-overlay"></div>
-    </section>
-  <?php else: ?>
+  <?php if(!is_front_page()): ?>
     <header class="page-title">
       <div class="container">
         <h1><?php echo get_the_title(); ?></h1>
