@@ -1,0 +1,44 @@
+    @font-face{
+        font-family:"Avenir Next W01_n4";
+        src:url("Fonts/e9167238-3b3f-4813-a04a-a384394eed42.eot?#iefix") format("eot")
+    }
+    @font-face{
+        font-family:"Avenir Next W01";
+        src:url("Fonts/e9167238-3b3f-4813-a04a-a384394eed42.eot?#iefix");
+        src:url("Fonts/e9167238-3b3f-4813-a04a-a384394eed42.eot?#iefix") format("eot"),url("Fonts/2cd55546-ec00-4af9-aeca-4a3cd186da53.woff2") format("woff2"),url("Fonts/1e9892c0-6927-4412-9874-1b82801ba47a.woff") format("woff"),url("Fonts/46cf1067-688d-4aab-b0f7-bd942af6efd8.ttf") format("truetype");
+font-weight: 400;
+font-style: normal;
+    }
+    @font-face{
+        font-family:"Avenir Next W01_n5";
+        src:url("Fonts/1a7c9181-cd24-4943-a9d9-d033189524e0.eot?#iefix") format("eot")
+    }
+    @font-face{
+        font-family:"Avenir Next W01";
+        src:url("Fonts/1a7c9181-cd24-4943-a9d9-d033189524e0.eot?#iefix");
+        src:url("Fonts/1a7c9181-cd24-4943-a9d9-d033189524e0.eot?#iefix") format("eot"),url("Fonts/627fbb5a-3bae-4cd9-b617-2f923e29d55e.woff2") format("woff2"),url("Fonts/f26faddb-86cc-4477-a253-1e1287684336.woff") format("woff"),url("Fonts/63a74598-733c-4d0c-bd91-b01bffcd6e69.ttf") format("truetype");
+font-weight: 500;
+font-style: normal;
+    }
+    @font-face{
+        font-family:"Avenir Next W01_n8";
+        src:url("Fonts/dccb10af-07a2-404c-bfc7-7750e2716bc1.eot?#iefix") format("eot")
+    }
+    @font-face{
+        font-family:"Avenir Next W01";
+        src:url("Fonts/dccb10af-07a2-404c-bfc7-7750e2716bc1.eot?#iefix");
+        src:url("Fonts/dccb10af-07a2-404c-bfc7-7750e2716bc1.eot?#iefix") format("eot"),url("Fonts/14c73713-e4df-4dba-933b-057feeac8dd1.woff2") format("woff2"),url("Fonts/b8e906a1-f5e8-4bf1-8e80-82c646ca4d5f.woff") format("woff"),url("Fonts/890bd988-5306-43ff-bd4b-922bc5ebdeb4.ttf") format("truetype");
+font-weight: 800;
+font-style: normal;
+    }
+    @font-face{
+        font-family:"Factoria W05_n6";
+        src:url("Fonts/156bf7fd-91d0-4704-9220-7f1aa481b603.eot?#iefix") format("eot")
+    }
+    @font-face{
+        font-family:"Factoria W05";
+        src:url("Fonts/156bf7fd-91d0-4704-9220-7f1aa481b603.eot?#iefix");
+        src:url("Fonts/156bf7fd-91d0-4704-9220-7f1aa481b603.eot?#iefix") format("eot"),url("Fonts/7769ff41-71a1-4170-90a6-45f9773289fe.woff2") format("woff2"),url("Fonts/fee6898c-f9dc-4765-b9bb-74831d270849.woff") format("woff"),url("Fonts/b0867d3e-07c5-4ead-9d0f-1106dd8e6d5f.ttf") format("truetype");
+font-weight: 600;
+font-style: normal;
+    }
