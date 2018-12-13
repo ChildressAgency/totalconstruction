@@ -27,11 +27,10 @@
       <div class="container-fluid">
         <div class="phone-email">
           <?php 
-            $contact_page = get_page_by_path('contact');
-            $contact_page_id = $contact_page->ID;
-            $phone = get_field('phone_number', $contact_page_id);
-            $email = get_field('email', $contact_page_id);
-            $facebook = get_field('facebook', $contact_page_id);
+            $contact_page_id = totalconstruction_get_page_id_by_slug('contact');
+            $phone = get_post_meta($contact_page_id, 'phone_number');
+            $email = get_post_meta($contact_page_id, 'email');
+            $facebook = get_post_meta($contact_page_id, 'facebook');
           ?>
           <a href="tel:<?php echo $phone; ?>" class="phone"><?php echo $phone; ?></a>
           <br class="visible-xs" />

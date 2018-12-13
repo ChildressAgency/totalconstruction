@@ -1,12 +1,11 @@
 <?php 
-  $contact_page = get_page_by_path('contact');
-  $contact_page_id = $contact_page->ID;
-  $phone = get_field('phone_number', $contact_page_id); 
-  $email = get_field('email', $contact_page_id);
-  $street_address = get_field('street_address', $contact_page_id);
-  $city_state_zip = get_field('city_state_zip', $contact_page_id);
-  $facebook = get_field('facebook', $contact_page_id);
-  $google_map_link = get_field('google_map_link', $contact_page_id);
+  $contact_page_id = totalconstruction_get_page_id_by_slug('contact');
+  $phone = get_post_meta($contact_page_id, 'phone_number');
+  $email = get_post_meta($contact_page_id, 'email');
+  $street_address = get_post_meta($contact_page_id, 'street_address');
+  $city_state_zip = get_post_meta($contact_page_id, 'city_state_zip');
+  $facebook = get_post_meta($contact_page_id, 'facebook');
+  $google_map = get_post_meta($contact_page_id, 'google_map');
 ?>
   <section class="contact">
     <div class="container-fluid container-sm-height">
@@ -19,11 +18,13 @@
             <a href="tel:<?php echo $phone; ?>" class="phone"><?php echo $phone; ?></a>
           </div>
           <div class="contact-card">
-            <a href="<?php echo $google_map_link; ?>" class="address"><?php echo $street_address . '<br />' . $city_state_zip; ?></a>
+            <a href="<?php echo $google_map; ?>" class="address"><?php echo $street_address . '<br />' . $city_state_zip; ?></a>
           </div>
         </div>
-        <div class="col-sm-6 col-sm-height contact-form-side" style="background-image:url(<?php the_field('contact_form_background_image', $contact_page_id); ?>); <?php the_field('contact_form_background_image_css', $contact_page_id); ?>">
-          <?php echo do_shortcode(get_field('contact_form_shortcode', $contact_page_id)); ?>
+        <div class="col-sm-6 col-sm-height contact-form-side" style="background-image:url(<?php echo get_post_meta($contact_page_id, 'contact_form_background_image'); ?>); <?php echo get_post_meta($contact_page_id, 'contact_form_background_image_css'); ?>">
+          <?php 
+            $contact_form_shortcode = get_post_meta($contact_page_id, 'contact_form_shortcode');
+            echo do_shortcode($contact_form_shortcode); ?>
           <div class="contact-side-overlay"></div>
         </div>
       </div>
@@ -33,7 +34,9 @@
   <?php if(is_page('contact')): ?>
     <section id="request-quote">
       <div class="container">
-        <?php echo do_shortcode(get_field('request_quote_form_shortcode')); ?>
+        <?php 
+          $request_quote_form_shortcode = get_post_meta($contact_page_id, 'request_quote_form_shortcode');
+          echo do_shortcode($request_quote_form_shortcode); ?>
       </div>
     </section>
   <?php endif; ?>
