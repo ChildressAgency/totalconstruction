@@ -93,7 +93,14 @@
   <?php if(!is_front_page()): ?>
     <header class="page-title">
       <div class="container">
-        <h1><?php echo get_the_title(); ?></h1>
+        <?php
+          if(is_singular('services')){
+            echo '<h1>Services</h1>';
+          }
+          else{
+            echo '<h1>' . get_the_title() . '</h1>';
+          }
+        ?>
       </div>
     </header>
   <?php endif; ?>
