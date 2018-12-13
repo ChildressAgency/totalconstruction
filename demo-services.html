@@ -59,7 +59,14 @@
           <ul class="nav navbar-nav navbar-right">
             <li class="active"><a href="#">Home</a></li>
             <li><a href="#">About</a></li>
-            <li><a href="#">Services</a></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Services</a>
+              <ul class="dropdown-menu">
+                <li><a href="#">Pre-Engineered Metal Buildings</a></li>
+                <li><a href="#">General Contracting</a></li>
+                <li><a href="#">Pole Barns</a></li>
+              </ul>
+            </li>
             <li><a href="#">Gallery</a></li>
             <li><a href="#">Testimonials</a></li>
             <li><a href="#">Contact</a></li>
@@ -85,17 +92,20 @@
     <div class="container">
       <div class="row">
         <div class="col-sm-4 col-md-3">
-          <ul class="services-nav list-unstyled" role="tablist">
-            <li role="presentation" class="active">
-              <a href=".pre-engineered" aria-controls="pre-engineered" role="tab" data-toggle="tab">Pre-Engineered Metal Buildings</a>
-            </li>
-            <li role="presentation">
-              <a href=".general-contracting" aria-controls="general-contracting" role="tab" data-toggle="tab">General Contracting</a>
-            </li>
-            <li role="presentation">
-              <a href=".pole-barns" aria-controls="pole-barns" role="tab" data-toggle="tab">Pole Barns</a>
-            </li>
-          </ul>
+          <nav class="services-nav hidden-xs">
+            <ul class="list-unstyled">
+              <li role="presentation" class="active">
+                <a href="" aria-controls="pre-engineered" role="tab">Pre-Engineered Metal Buildings</a>
+              </li>
+              <li role="presentation">
+                <a href=".general-contracting" aria-controls="general-contracting" role="tab">General Contracting</a>
+              </li>
+              <li role="presentation">
+                <a href=".pole-barns" aria-controls="pole-barns" role="tab">Pole Barns</a>
+              </li>
+            </ul>
+          </nav>
+          <h2 class="service-title visible-xs-block">Pre-Engineered Metal Buildings</h2>
         </div>
         <div class="col-sm-8 col-md-9">
           <div class="tab-content">
