@@ -45,7 +45,7 @@
         $badges = get_post_meta($page_id, 'guarantees', true);
         if($badges): ?>
           <div class="row badges">
-            <?php for($b = 0; $b < $badges; $b++;): ?>
+            <?php for($b = 0; $b < $badges; $b++): ?>
               <div class="col-sm-3">
                 <div class="badge">
                   <?php $badge_image = get_post_meta($page_id, 'guarantees_' . $b . '_guarantee_icon', true); ?>
