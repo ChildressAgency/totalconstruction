@@ -36,7 +36,8 @@ function totalconstruction_create_post_types(){
       'editor',
       'custom-fields',
       'revisions',
-      'excerpt'
+      'excerpt',
+      'thumbnail'
     )
   );
   register_post_type('services', $services_args);
