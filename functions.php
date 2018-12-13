@@ -72,16 +72,6 @@ function totalconstruction_setup(){
 
 require_once dirname(__FILE__) . '/includes/class-wp_bootstrap_navwalker.php';
 
-if(function_exists('acf_add_options_page')){
-  acf_add_options_page(array(
-    'page_title' => 'General Settings',
-    'menu_title' => 'General Settings',
-    'menu_slug' => 'general-settings',
-    'capability' => 'edit_posts',
-    'redirect' => false
-  ));
-}
-
 function totalconstruction_header_fallback_menu(){ ?>
   <div id="navbar" class="navbar-collapse collapse">
     <ul class="nav navbar-nav navbar-right">
@@ -106,4 +96,14 @@ function totalconstruction_footer_fallback_menu(){ ?>
     </ul>
   </nav>
 <?php
+}
+
+function totalconstruction_get_page_id_by_slug($slug){
+  $page = get_page_by_path($slug);
+  if($page){
+    return $page->ID;
+  }
+  else{
+    return null;
+  }
 }
