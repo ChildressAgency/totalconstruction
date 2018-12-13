@@ -1,0 +1,41 @@
+<div class="request-quote-form">
+  <h2 class="block-font">Request a Quote</h2>
+  <div class="form-group">
+    <label for="rq-fname" class="sr-only">First Name</label>
+    [text* rq-fname id:rq-fname class:form-control placeholder "First Name*"]
+  </div>
+  <div class="form-group">
+    <label for="rq-lname" class="sr-only">Last Name</label>
+    [text* rq-lname id:rq-lname class:form-control placeholder "Last Name*"]
+  </div>
+  <div class="form-group">
+    <label for="rq-email" class="sr-only">Email</label>
+    [email* rq-email id:rq-email class:form-control placeholder "Email*"]
+  </div>
+  <div class="form-group">
+    <label for="rq-phone" class="sr-only">Phone Number</label>
+    [tel rq-phone id:rq-phone class:form-control placeholder "Phone Number"]
+  </div>
+  <div class="form-group">
+    <label for="rq-service" class="sr-only">Service Interest</label>
+    [text rq-service id:rq-service class:form-control placeholder "Service Interest"]
+  </div>
+  <div class="form-group">
+    <label for="rq-build-type" class="control-label">Type of Build</label>
+    [select rq-build-type id:rq-build-type class:form-control "Build Type 1" "Build Type 2" Build Type 3"]
+  </div>
+  <div class="form-group">
+    <label for="rq-completion-date" class="control-label">Projected Completion Date</label>
+    [date rq-completion-date id:rq-completion-date class:form-control]
+  </div>
+  <div class="form-group text-left">
+    [radio rq-type id:rq-type use_label_element default:1 "Residential" "Commercial"]
+  </div>
+  <div class="form-group">
+    <label for="rq-message" class="sr-only">Message</label>
+    [textarea rq-message id:rq-message class:form-control placeholder "Message"]
+  </div>
+  <div class="form-group">
+    [submit class:btn-main "Submit"]
+  </div>
+</div>
