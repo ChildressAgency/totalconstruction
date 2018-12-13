@@ -168,8 +168,12 @@ input[type="submit"]{
 }
 #header-nav .navbar-nav>li.active>a,
 #header-nav .navbar-nav>li>a:hover,
-#header-nav .navbar-nav>li>a:focus{
+#header-nav .navbar-nav>li>a:focus,
+#header-nav .navbar-nav>li.dropdown.open>a,
+#header-nav .dropdown-menu>li>a:hover,
+#header-nav .dropdown-menu>li>a:focus{
   background-color:#fff200;
+  color:#000;
 }
 #header-nav .navbar-nav>li>a::before,
 #header-nav .navbar-nav>li>a::before,
@@ -664,10 +668,11 @@ article h2{
   left:-37px;
 }
 
-.services-nav>li{
+.services-nav li{
   margin-bottom:25px;
 }
-.services-nav>li>a{
+.services-nav li>a,
+.service-title{
   font-family:Factoria, serif;
   font-size:20px;
   color:#808080;
@@ -675,17 +680,22 @@ article h2{
   transition:all .3s ease;
   line-height:1em;
 }
-.services-nav>li>a:hover,
-.services-nav>li>a:focus{
+.services-nav li>a:hover,
+.services-nav li>a:focus{
   color:#000;
   text-decoration:none;
 }
-.services-nav>li.active>a{
+.services-nav li.active>a,
+.service-title{
   font-size:24px;
   color:#000;
 }
 article.service h2{
   font-size:20px;
+}
+.service-title{
+  margin-top:0;
+  margin-bottom:25px;
 }
 
 .types-of-buildings{
