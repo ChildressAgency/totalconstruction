@@ -31,6 +31,7 @@ function totalconstruction_create_post_types(){
     'menu_icon' => 'dashicons-hammer',
     'query_var' => 'services',
     'has_archive' => false,
+    'show_in_rest' => true,
     'supports' => array(
       'title',
       'editor',
