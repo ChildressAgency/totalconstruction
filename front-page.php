@@ -19,92 +19,85 @@
     <div class="bg-overlay"></div>
   </section>
 
-  <section id="hp-services">
-    <div class="container">
-      <div class="row">
-        <div class="col-sm-4">
-          <div class="service-card">
-            <img src="images/empty-warehouse.jpg" class="img-responsive center-block" alt="Empty Warehouse" />
-            <div class="service-card-caption">
-              <h2>Pre-Engineered Metal Buildings</h2>
-              <p>Pre-Engineered Metal Buildings are a great solution for modern building projects. They are quick to install, durable, cost efficient and customizable.</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-sm-4">
-          <div class="service-card">
-            <img src="images/warehouse-outside.jpg" class="img-responsive center-block" alt="Front of building" />
-            <div class="service-card-caption">
-              <h2>General Contracting</h2>
-              <p>Total Construction Services, Inc. is a full-service general contractor. Our organization and communication skills ensure that projects are completed on schedule and to your satisfaction.</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-sm-4">
-          <div class="service-card">
-            <img src="images/barn.jpg" class="img-responsive center-block" alt="Pole Barn" />
-            <div class="service-card-caption">
-              <h2>Pole Barns</h2>
-              <p>Pole Barns are versatile buildings that are built using a technique called post-frame construction, which refers to highly engineered wood-framed buildings that can be built with a variety of exterior options and design flexibility.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <a href="#" class="btn-main">Our Services</a>
-    </div>
-  </section>
+  <?php
+    $services = new WP_Query(array(
+      'post_type' => 'services',
+      'posts_per_page' => -1,
+      'post_status' => 'publish'
+    ));
 
-  <section id="hp-about" style="background-image:url(images/storage-building.jpg); background-position:center center;">
-    <div class="container">
-      <div class="hp-about">
-        <p><span class="block-font">TOTAL CONSTRUCTION SERVICES, INC.</span> is a general contractor specializing in the design and construction of pre-engineered metal buildings. We are proud to be an authorized dealer/builder for American Buildings and Ceco Building Systems, two fo the leading metal building suppliers in the country.</p>
-        <a href="#" class="btn-main btn-alt">About Us</a>
-      </div>
-    </div>
-  </section>
+    if($services->have_posts()): ?>
+      <section id="hp-services">
+        <div class="container">
+          <div class="row">
+            <?php $s = 0; while($services->have_posts()): $services->the_post(); ?>
+              <?php if($s % 3 == 0){ echo '<div class="clearfix"></div>'; } ?>
+              <?php $service_id = get_the_ID(); ?>
+              <div class="col-sm-4">
+                <div class="service-card">
+                  <?php
+                    if(has_post_thumbnail()){
+                      the_post_thumbnail('full', array('class' => 'img-responsive center-block'));
+                    }
+                  ?>
+                  <div class="service-card-caption">
+                    <h2><?php the_title(); ?></h2>
+                    <?php the_excerpt(); ?>
+                  </div>
+                </div>
+              </div>
+            <?php endwhile; ?>
+          </div>
+          <a href="<?php echo home_url('services'); ?>" class="btn-main">Our Services</a>
+        </div>
+      </section>
+  <?php endif; wp_reset_postdata(); ?>
+
+  <?php 
+    $about_text = get_post_meta($page_id, 'about_section_text');
+    if($about_text): ?>
+      <section id="hp-about" style="background-image:url(<?php echo get_post_meta($page_id, 'about_section_background_image'); ?>); <?php echo get_post_meta($page_id, 'about_section_background_image_css'); ?>">
+        <div class="container">
+          <div class="hp-about">
+            <?php echo $about_text; ?>
+            <a href="<?php echo home_url('about'); ?>" class="btn-main btn-alt">About Us</a>
+          </div>
+        </div>
+      </section>
+  <?php endif; ?>
 
   <section id="hp-guarantees">
     <div class="container">
       <article>
-        <h2>Our Guarantees to get the Job Done Right</h2>
-        <p>We pride ourselves on the values we apply everyday to every job to make sure we provide our customers with the highest quality product.</p>
+        <h2><?php echo get_post_meta($page_id, 'guarantees_section_title'); ?></h2>
+        <?php echo get_post_meta($page_id, 'guaranteed_section_content'); ?>
       </article>
-      <div class="row badges">
-        <div class="col-sm-3">
-          <div class="badge">
-            <img src="images/ribbon-hex-icon.png" class="img-responsive center-block" alt="Quality Craftsmanship Badge" />
-            <h3>Quality Craftsmanship</h3>
+
+      <?php 
+        $badges = get_post_meta($page_id, 'guarantees', true);
+        if($badges): ?>
+          <div class="row badges">
+            <?php for($b = 0; $b < $badges; $b++;): ?>
+              <div class="col-sm-3">
+                <div class="badge">
+                  <?php $badge_image = get_post_meta($page_id, 'guarantees_' . $b . '_guarantee_icon', true); ?>
+                  <img src="<?php echo $badge_image['url']; ?>" class="img-responsive center-block" alt="<?php echo $badge_image['title']; ?>" />
+                  <h3><?php echo get_post_meta($page_id, 'guarantees_' . $b . '_guarantee_title'); ?></h3>
+                </div>
+              </div>
+            <?php endfor; ?>
           </div>
-        </div>
-        <div class="col-sm-3">
-          <div class="badge">
-            <img src="images/clock-hex-icon.png" class="img-responsive center-block" alt="On Schedule Badge" />
-            <h3>On Schedule</h3>
-          </div>
-        </div>
-        <div class="col-sm-3">
-          <div class="badge">
-            <img src="images/checkmark-hex-icon.png" class="img-responsive center-block" alt="Honest & Reliable Badge" />
-            <h3>Honest & Reliable</h3>
-          </div>
-        </div>
-        <div class="col-sm-3">
-          <div class="badge">
-            <img src="images/calculator-hex-icon.png" class="img-responsive center-block" alt="Great Value Badge" />
-            <h3>Great Value</h3>
-          </div>
-        </div>
-      </div>
+      <?php endif; ?>
     </div>
   </section>
 
-  <section id="hp-service-areas" style="background-image:url(images/unfinished-roof.jpg); background-position:center center;">
+  <section id="hp-service-areas" style="background-image:url(<?php echo get_post_meta($page_id, 'service_areas_section_background_image'); ?>); <?php echo get_post_meta($page_id, 'service_areas_section_background_image_css'); ?>">
     <div class="container">
       <div class="service-areas">
-        <img src="images/virginia.png" class="img-responsive center-block" alt="Virginia" />
+        <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/virginia.png" class="img-responsive center-block" alt="Virginia" />
         <div class="service-areas-caption">
           <h3>Our Service Areas</h3>
-          <p>Happy to be serving Northern Virginia and the surrounding areas of Fredericksburg and Richmond.</p>
+          <?php echo get_post_meta($page_id, 'service_areas_section_content'); ?>
         </div>
       </div>
     </div>
