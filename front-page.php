@@ -1,12 +1,13 @@
 <?php get_header(); ?>
-  <section id="hp-hero" class="hero" style="background-image:url(<?php the_field('hero_background_image'); ?>); <?php the_field('hero_background_image_css'); ?>">
+  <?php $page_id = get_the_ID(); ?>
+  <section id="hp-hero" class="hero" style="background-image:url(<?php echo get_post_meta($page_id, 'hero_background_image'); ?>); <?php echo get_post_meta($page_id, 'hero_background_image_css'); ?>">
     <div class="container">
       <div class="hero-caption">
-        <h1><?php the_field('hero_caption'); ?></h1>
+        <h1><?php echo get_post_meta($page_id, 'hero_caption') ?></h1>
         <div class="inline-btns">
           <?php 
-            $button_one = get_field('button_one'); 
-            $button_two = get_field('button_two');
+            $button_one = get_post_meta($post_id, 'button_one', true);
+            $button_two = get_post_meta($post_id, 'button_two', true);
             if($button_one): ?>
               <a href="<?php echo $button_one['url']; ?>" class="btn-main"><?php echo $button_one['title']; ?></a>
           <?php endif; if($button_two): ?>
