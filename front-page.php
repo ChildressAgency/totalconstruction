@@ -1,13 +1,16 @@
 <?php get_header(); ?>
   <?php $page_id = get_the_ID(); ?>
-  <section id="hp-hero" class="hero" style="background-image:url(<?php echo get_post_meta($page_id, 'hero_background_image'); ?>); <?php echo get_post_meta($page_id, 'hero_background_image_css'); ?>">
+  <?php
+    $hero_bg_img_and_css = totalconstruction_get_bg_img_and_css($page_id, 'hero_settings_hero_background_image');
+  ?>
+  <section id="hp-hero" class="hero" style="background-image:url(<?php echo esc_url($hero_bg_img_and_css['image_url']); ?>); <?php echo esc_html($hero_bg_img_and_css['image_css']); ?>">
     <div class="container">
       <div class="hero-caption">
-        <h1><?php echo get_post_meta($page_id, 'hero_caption') ?></h1>
+        <h1><?php echo get_post_meta($page_id, 'hero_settings_hero_caption', true) ?></h1>
         <div class="inline-btns">
           <?php 
-            $button_one = get_post_meta($post_id, 'button_one', true);
-            $button_two = get_post_meta($post_id, 'button_two', true);
+            $button_one = get_post_meta($page_id, 'hero_settings_button_one', true);
+            $button_two = get_post_meta($page_id, 'hero_settings_button_two', true);
             if($button_one): ?>
               <a href="<?php echo $button_one['url']; ?>" class="btn-main"><?php echo $button_one['title']; ?></a>
           <?php endif; if($button_two): ?>
@@ -22,9 +25,9 @@
   <?php get_template_part('includes/service-cards'); ?>
 
   <?php 
-    $about_text = get_post_meta($page_id, 'about_section_text');
+    $about_text = get_post_meta($page_id, 'about_section_text', true);
     if($about_text): ?>
-      <section id="hp-about" style="background-image:url(<?php echo get_post_meta($page_id, 'about_section_background_image'); ?>); <?php echo get_post_meta($page_id, 'about_section_background_image_css'); ?>">
+      <section id="hp-about" style="background-image:url(<?php echo get_post_meta($page_id, 'about_section_background_image', true); ?>); <?php echo get_post_meta($page_id, 'about_section_background_image_css', true); ?>">
         <div class="container">
           <div class="hp-about">
             <?php echo $about_text; ?>
