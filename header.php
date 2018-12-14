@@ -28,9 +28,9 @@
         <div class="phone-email">
           <?php 
             $contact_page_id = totalconstruction_get_page_id_by_slug('contact');
-            $phone = get_post_meta($contact_page_id, 'phone_number');
-            $email = get_post_meta($contact_page_id, 'email');
-            $facebook = get_post_meta($contact_page_id, 'facebook');
+            $phone = get_post_meta($contact_page_id, 'phone_number', true);
+            $email = get_post_meta($contact_page_id, 'email', true);
+            $facebook = get_post_meta($contact_page_id, 'facebook', true);
           ?>
           <a href="tel:<?php echo $phone; ?>" class="phone"><?php echo $phone; ?></a>
           <br class="visible-xs" />
@@ -38,7 +38,7 @@
         </div>
         <div class="social-quote">
           <?php if($facebook): ?>
-            <a href="<?php echo $facebook; ?>" class="facebook text-hide">Facebook</a>
+            <a href="<?php echo esc_url($facebook); ?>" class="facebook text-hide">Facebook</a>
         <?php endif; ?>
           <a href="<?php echo home_url('contact'); ?>" class="request-quote">Request a Quote</a>
         </div>
