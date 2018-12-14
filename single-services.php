@@ -39,20 +39,24 @@
 </main>
 
 <?php 
-  $building_types = get_post_meta($service_id, 'buildings_types', true);
+  $building_types = get_post_meta($service_id, 'types_of_buildings', true);
   if($building_types): ?>
     <section class="types-of-buildings">
       <div class="container">
-        <h2>Types of <?php echo get_the_title($service_id); ?></h2>
+        <h2>Types of <?php echo esc_html(get_the_title($service_id)); ?></h2>
         <div class="row">
           <?php for($i = 0; $i < $building_types; $i++): ?>
             <?php if($i % 3 == 0){ echo '<div class="clearfix"></div>'; } ?>
             <div class="col-sm-4">
               <article class="building-type-card">
-                <?php $building_type_image = get_post_meta($service_id, 'building_types_' . $i . '_building_type_image'); ?>
-                <img src="<?php echo $building_type_image['url']; ?>" class="img-responsive center-block" alt="<?php echo $building_type_image['title']; ?>" />
-                <h3><?php echo esc_html(get_post_meta($service_id, 'building_types_' . $i . '_building_type_title')); ?></h3>
-                <p><?php echo esc_html(get_post_meta($service_id, 'building_types_' . $i . '_building_type_description')); ?></p>
+                <?php 
+                  $building_type_image_id = get_post_meta($service_id, 'types_of_buildings_' . $i . '_building_image', true); 
+                  $building_type_image = wp_get_attachment_image_src($building_type_image_id, 'full');
+                  $building_type_image_alt = get_post_meta($building_type_image_id, '_wp_attachment_image_alt', true);
+                ?>
+                <img src="<?php echo esc_url($building_type_image[0]); ?>" class="img-responsive center-block" alt="<?php echo esc_attr($building_type_image); ?>" />
+                <h3><?php echo esc_html(get_post_meta($service_id, 'types_of_buildings_' . $i . '_building_name', true)); ?></h3>
+                <p><?php echo esc_html(get_post_meta($service_id, 'types_of_buildings_' . $i . '_building_desctription', true)); ?></p>
               </article>
             </div>
           <?php endfor; ?>
