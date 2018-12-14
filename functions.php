@@ -107,3 +107,19 @@ function totalconstruction_get_page_id_by_slug($slug){
     return null;
   }
 }
+
+/*
+  Returns acf background image url and css
+  $field = acf field name
+*/
+function totalconstruction_get_bg_img_and_css($page_id, $field){
+  $bg_img_and_css = [];
+  $bg_img_id = get_post_meta($page_id, $field, true);
+  $bg_img = wp_get_attachment_image_src($bg_img_id, 'full');
+  $bg_img_and_css['image_url'] = $bg_img[0];
+
+  $bg_img_css = get_post_meta($page_id, $field . '_css', true);
+  $bg_img_and_css['image_css'] = $bg_img_css;
+
+  return $bg_img_and_css;
+}
