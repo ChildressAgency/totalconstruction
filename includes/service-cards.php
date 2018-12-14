@@ -27,7 +27,7 @@
             </div>
           <?php endwhile; ?>
         </div>
-        <a href="<?php echo home_url('services'); ?>" class="btn-main">Our Services</a>
+        <a href="<?php echo esc_url(home_url('services')); ?>" class="btn-main">Our Services</a>
       </div>
     </section>
 <?php endif; wp_reset_postdata(); ?>

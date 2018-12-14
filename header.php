@@ -32,15 +32,15 @@
             $email = get_post_meta($contact_page_id, 'email', true);
             $facebook = get_post_meta($contact_page_id, 'facebook', true);
           ?>
-          <a href="tel:<?php echo $phone; ?>" class="phone"><?php echo $phone; ?></a>
+          <a href="tel:<?php echo esc_html($phone); ?>" class="phone"><?php echo esc_html($phone); ?></a>
           <br class="visible-xs" />
-          <a href="mailto:<?php echo $email; ?>" class="email"><?php echo $email; ?></a>
+          <a href="mailto:<?php echo esc_html($email); ?>" class="email"><?php echo esc_html($email); ?></a>
         </div>
         <div class="social-quote">
           <?php if($facebook): ?>
             <a href="<?php echo esc_url($facebook); ?>" class="facebook text-hide">Facebook</a>
         <?php endif; ?>
-          <a href="<?php echo home_url('contact'); ?>" class="request-quote">Request a Quote</a>
+          <a href="<?php echo esc_url(home_url('contact')); ?>" class="request-quote">Request a Quote</a>
         </div>
       </div>
     </div>
@@ -48,12 +48,12 @@
     <nav id="header-nav">
       <div class="container">
         <div class="navbar-header">
-          <a href="<?php echo home_url(); ?>" class="header-logo">
+          <a href="<?php echo esc_url(home_url()); ?>" class="header-logo">
             <?php
               $logo_id = get_theme_mod('custom_logo');
               $logo = wp_get_attachment_image_src($logo_id, 'full');
               if(has_custom_logo()): ?>
-                <img src="<?php echo esc_url($logo[0]); ?>" class="img-responsive" alt="<?php echo bloginfo('name'); ?> Logo" />
+                <img src="<?php echo esc_url($logo[0]); ?>" class="img-responsive" alt="<?php echo esc_attr(bloginfo('name')); ?> Logo" />
             <?php endif; ?>
           </a>
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -85,9 +85,9 @@
   </section>
 
   <div id="quick-link-tab">
-    <a href="<?php echo home_url('contact'); ?>" class="quick-link-item quick-link-quote">Request a Quote</a>
-    <a href="mailto:<?php echo $email; ?>" class="quick-link-item quick-link-email">Email Us</a>
-    <a href="tel:<?php echo $phone; ?>" class="quick-link-item quick-link-call">Call Us</a>
+    <a href="<?php echo esc_url(home_url('contact')); ?>" class="quick-link-item quick-link-quote">Request a Quote</a>
+    <a href="mailto:<?php echo esc_html($email); ?>" class="quick-link-item quick-link-email">Email Us</a>
+    <a href="tel:<?php echo esc_html($phone); ?>" class="quick-link-item quick-link-call">Call Us</a>
   </div>
 
   <?php if(!is_front_page()): ?>

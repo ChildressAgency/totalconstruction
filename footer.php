@@ -12,13 +12,13 @@
       <div class="row row-sm-height">
         <div class="col-sm-6 col-sm-height icon-side">
           <div class="contact-card">
-            <a href="mailto:<?php echo $email; ?>" class="email"><?php echo $email; ?></a>
+            <a href="mailto:<?php echo esc_html($email); ?>" class="email"><?php echo esc_html($email); ?></a>
           </div>
           <div class="contact-card">
-            <a href="tel:<?php echo $phone; ?>" class="phone"><?php echo $phone; ?></a>
+            <a href="tel:<?php echo esc_html($phone); ?>" class="phone"><?php echo esc_html($phone); ?></a>
           </div>
           <div class="contact-card">
-            <a href="<?php echo $google_map; ?>" class="address"><?php echo $street_address . '<br />' . $city_state_zip; ?></a>
+            <a href="<?php echo esc_url($google_map); ?>" class="address" target="_blank"><?php echo esc_html($street_address) . '<br />' . esc_html($city_state_zip); ?></a>
           </div>
         </div>
         <?php $contact_form_bg_and_css = totalconstruction_get_bg_img_and_css($contact_page_id, 'contact_form_background_image', true); ?>
@@ -50,7 +50,7 @@
             $logo_id = get_theme_mod('custom_logo');
             $logo = wp_get_attachment_image_src($logo_id, 'full');
             if(has_custom_logo()): ?>
-              <img src="<?php echo esc_url($logo[0]); ?>" class="img-responsive" alt="<?php echo bloginfo('name'); ?> Logo" />
+              <img src="<?php echo esc_url($logo[0]); ?>" class="img-responsive" alt="<?php echo esc_attr(bloginfo('name')); ?> Logo" />
           <?php endif; ?>
         </div>
         <div class="col-sm-6">
@@ -80,7 +80,7 @@
         </div>
       </div>
       <div class="copyright">
-        <p>&copy; <?php echo date('Y'); ?> <?php echo bloginfo('name'); ?></p>
+        <p>&copy; <?php echo date('Y'); ?> <?php echo esc_html(bloginfo('name')); ?></p>
         <p>website created by <a href="https://childressagency.com" target="_blank">The Childress Agency</a></p>
       </div>
     </div>

@@ -75,12 +75,19 @@ require_once dirname(__FILE__) . '/includes/class-wp_bootstrap_navwalker.php';
 function totalconstruction_header_fallback_menu(){ ?>
   <div id="navbar" class="navbar-collapse collapse">
     <ul class="nav navbar-nav navbar-right">
-      <li <?php if(is_front_page()){ echo ' class="active"'; } ?>><a href="<?php echo home_url(); ?>">Home</a></li>
-      <li <?php if(is_page('about')){ echo ' class="active"'; } ?>><a href="<?php echo home_url('about'); ?>">About</a></li>
-      <li <?php if(is_page('services')){ echo ' class="active"'; } ?>><a href="<?php echo home_url('services'); ?>">Services</a></li>
-      <li <?php if(is_page('gallery')){ echo ' class="active"'; } ?>><a href="<?php echo home_url('gallery'); ?>">Gallery</a></li>
-      <li <?php if(is_page('testimonials')){ echo ' class="active"'; } ?>><a href="<?php echo home_url('testimonials'); ?>">Testimonials</a></li>
-      <li <?php if(is_page('contact')){ echo ' class="active"'; } ?>><a href="<?php echo home_url('contact'); ?>">Contact</a></li>
+      <li <?php if(is_front_page()){ echo ' class="active"'; } ?>><a href="<?php echo esc_url(home_url()); ?>">Home</a></li>
+      <li <?php if(is_page('about')){ echo ' class="active"'; } ?>><a href="<?php echo esc_url(home_url('about')); ?>">About</a></li>
+      <li class="dropdown<?php if(is_singular('services')){ echo ' active'; } ?>"">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Services</a>
+        <ul class="dropdown-menu">
+          <li><a href="<?php echo esc_url(home_url('pre-engineered-metal-buildings')); ?>">Pre-Engineered Metal Buildings</a></li>
+          <li><a href="<?php echo esc_url(home_url('general-contracting')); ?>">General Contracting</a></li>
+          <li><a href="<?php echo esc_url(home_url('pole-barns')); ?>">Pole Barns</a></li>
+        </ul>
+      </li>
+      <li <?php if(is_page('gallery')){ echo ' class="active"'; } ?>><a href="<?php echo esc_url(home_url('gallery')); ?>">Gallery</a></li>
+      <li <?php if(is_page('testimonials')){ echo ' class="active"'; } ?>><a href="<?php echo esc_url(home_url('testimonials')); ?>">Testimonials</a></li>
+      <li <?php if(is_page('contact')){ echo ' class="active"'; } ?>><a href="<?php echo esc_url(home_url('contact')); ?>">Contact</a></li>
     </ul>
   </div>
 <?php
@@ -89,10 +96,10 @@ function totalconstruction_header_fallback_menu(){ ?>
 function totalconstruction_footer_fallback_menu(){ ?>
   <nav id="footer-nav">
     <ul class="nav nav-justified">
-      <li><a href="<?php echo home_url(); ?>">Home</a></li>
-      <li><a href="<?php echo home_url('about'); ?>">About</a></li>
-      <li><a href="<?php echo home_url('services'); ?>">Services</a></li>
-      <li><a href="<?php echo home_url('contact'); ?>">Contact</a></li>
+      <li><a href="<?php echo esc_url(home_url()); ?>">Home</a></li>
+      <li><a href="<?php echo esc_url(home_url('about')); ?>">About</a></li>
+      <li><a href="<?php echo esc_url(home_url('services')); ?>">Services</a></li>
+      <li><a href="<?php echo esc_url(home_url('contact')); ?>">Contact</a></li>
     </ul>
   </nav>
 <?php
