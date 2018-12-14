@@ -91,7 +91,7 @@ function totalconstruction_add_services_acf_fields(){
           ),
           array(
             'key' => 'field_5c127a5ed54a7',
-            'label' => 'Building Desctription',
+            'label' => 'Building Description',
             'name' => 'building_desctription',
             'type' => 'textarea',
             'instructions' => '',
