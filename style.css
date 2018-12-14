@@ -63,7 +63,8 @@ a,
 input[type="submit"]{
   transition:all .3s ease;
 }
-.btn-main{
+.btn-main,
+.wp-block-button__link{
   display: inline-block;
   background-color: #fff200;
   color: #000;
@@ -75,7 +76,9 @@ input[type="submit"]{
   border:none;
 }
 .btn-main:hover,
-.btn-main:focus{
+.btn-main:focus,
+.wp-block-button__link:hover,
+.wp-block-button__link:focus{
   text-decoration:none;
   color:#fff;
   background-color:#000;
@@ -549,13 +552,9 @@ input[type="submit"]{
   letter-spacing:4px;
 }
 
-#main{
-  padding-top:40px;
-  padding-bottom:40px;
-}
-.about-us article .col-sm-7,
-.about-us article .col-sm-5{
-  margin-top:25px;
+#main article{
+  margin-top:40px;
+  margin-bottom:40px;
 }
 article h2{
   margin-top:0;
@@ -668,6 +667,9 @@ article h2{
   left:-37px;
 }
 
+.services-nav{
+  margin-top:40px;
+}
 .services-nav li{
   margin-bottom:25px;
 }
@@ -694,7 +696,7 @@ article.service h2{
   font-size:20px;
 }
 .service-title{
-  margin-top:0;
+  margin-top:40px;
   margin-bottom:25px;
 }
 
