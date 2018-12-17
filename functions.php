@@ -27,7 +27,7 @@ function totalconstruction_scripts(){
 
   wp_register_script(
     'slick-js',
-    '//cdn.jsdelivr.net/gh/kenwheeler/slick@1.9.0/slick/slick.min.js',
+    '//cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.1/slick/slick.min.js',
     array('jquery'),
     '',
     true
@@ -51,7 +51,7 @@ function totalconstruction_scripts(){
 add_action('wp_enqueue_scripts', 'totalconstruction_styles');
 function totalconstruction_styles(){
   wp_register_style('bootstrap-css', '//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css');
-  wp_register_style('slick-css', '//cdn.jsdelivr.net/gh/kenwheeler/slick@1.9.0/slick/slick.css');
+  wp_register_style('slick-css', '//cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.1/slick/slick.css');
   wp_register_style('totalconstruction', get_template_directory_uri() . '/style.css');
   
   wp_enqueue_style('bootstrap-css');
