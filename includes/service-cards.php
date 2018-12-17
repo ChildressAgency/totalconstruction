@@ -25,7 +25,7 @@
                 </div>
               </div>
             </div>
-          <?php endwhile; ?>
+          <?php $s++; endwhile; ?>
         </div>
         <a href="<?php echo esc_url(home_url('services')); ?>" class="btn-main">Our Services</a>
       </div>
