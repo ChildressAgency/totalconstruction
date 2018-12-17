@@ -27,7 +27,17 @@
             </div>
           <?php $s++; endwhile; ?>
         </div>
-        <a href="<?php echo esc_url(home_url('services')); ?>" class="btn-main">Our Services</a>
+        <?php
+          $services_ids_query = new WP_Query(array(
+            'post_type' => 'services',
+            'posts_per_page' => -1,
+            'post_status' => 'publish',
+            'fields' => 'ids',
+            'orderby' => 'id'
+          ));
+          $services_ids = $services_ids_query->posts;
+        ?>
+        <a href="<?php echo esc_url(get_permalink($services_ids[0])); ?>" class="btn-main">Our Services</a>
       </div>
     </section>
 <?php endif; wp_reset_postdata(); ?>
