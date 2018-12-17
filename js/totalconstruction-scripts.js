@@ -6,7 +6,8 @@ jQuery(document).ready(function($){
       arrows: false,
       fade: true,
       asNavFor: '.gallery',
-      centerMode:true
+      centerMode:false,
+      adaptiveHeight:true,
     });
     $('.gallery').slick({
       slidesToShow: 6,
@@ -20,7 +21,7 @@ jQuery(document).ready(function($){
       nextArrow:'<button type="button" class="gallery-arrow slick-next">Next</button>',
       responsive:[
         {
-          breakpoint:991,
+          breakpoint:1199,
           settings:{
             slidesToShow:4,
             slidesToScroll:1,
@@ -54,7 +55,7 @@ jQuery(document).ready(function($){
           settings:{
             slidesToShow:1,
             slidesToScroll:1,
-            centerMode:true,
+            centerMode:false,
             focusOnSelect:true
           }
         }
