@@ -474,6 +474,13 @@ input[type="submit"]{
 #footer .copyright>p{
   margin-bottom:0;
 }
+#footer .copyright>p>a{
+  color:#fff;
+}
+#footer .copyright>p>a:hover,
+#footer .copyright>p>a:focus{
+  color:#fff;
+}
 
 #quick-link-tab{
   position:fixed;
@@ -632,7 +639,7 @@ article h2{
 
 .gallery-nav{
   display:inline-block;
-  margin-bottom:40px;
+  margin-bottom:80px;
   margin-top:40px;
 }
 .gallery-nav .form-control{
