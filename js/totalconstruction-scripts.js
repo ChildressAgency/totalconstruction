@@ -14,7 +14,6 @@ jQuery(document).ready(function($){
       slidesToScroll: 1,
       asNavFor: '.gallery-main',
       dots: false,
-      centerMode:true,
       focusOnSelect:true,
       variableWidth:false,
       arrows:true,
@@ -26,7 +25,6 @@ jQuery(document).ready(function($){
           settings:{
             slidesToShow:4,
             slidesToScroll:1,
-            centerMode:true,
             focusOnSelect:true,
             arrows:true
           }
@@ -36,7 +34,6 @@ jQuery(document).ready(function($){
           settings:{
             slidesToShow:3,
             slidesToScroll:1,
-            centerMode:true,
             focusOnSelect:true,
             arrows:true
           }
@@ -46,7 +43,6 @@ jQuery(document).ready(function($){
           settings:{
             slidesToShow:2,
             slidesToScroll:1,
-            centerMode:true,
             focusOnSelect:true,
             arrows:true
           }
@@ -56,7 +52,6 @@ jQuery(document).ready(function($){
           settings:{
             slidesToShow:1,
             slidesToScroll:1,
-            centerMode:false,
             focusOnSelect:true
           }
         }
@@ -69,9 +64,11 @@ jQuery(document).ready(function($){
 
       if(filterOn === true){
         $('.gallery').slick('slickUnfilter');
+        $('.gallery-main').slick('slickUnfilter');
       }
 
       $('.gallery').slick('slickFilter', filter);
+      $('.gallery-main').slick('slickFilter', filter);
       filterOn = true;
       //$(window).trigger('resize');
     });
