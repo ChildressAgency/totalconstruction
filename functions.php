@@ -34,6 +34,14 @@ function totalconstruction_scripts(){
   );
 
   wp_register_script(
+    'lightbox-js',
+    get_template_directory_uri() . '/vendors/lightbox/js/lightbox.min.js',
+    array('jquery'),
+    '',
+    true
+  );
+
+  wp_register_script(
     'totalconstruction-scripts', 
     get_template_directory_uri() . '/js/totalconstruction-scripts.js',
     array('jquery'), 
@@ -44,6 +52,7 @@ function totalconstruction_scripts(){
   wp_enqueue_script('bootstrap-script');
   if(is_page('gallery')){
     wp_enqueue_script('slick-js');
+    wp_enqueue_script('lightbox-js');
   }
   wp_enqueue_script('totalconstruction-scripts'); 
 }
@@ -52,10 +61,16 @@ add_action('wp_enqueue_scripts', 'totalconstruction_styles');
 function totalconstruction_styles(){
   wp_register_style('bootstrap-css', '//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css');
   wp_register_style('slick-css', '//cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.1/slick/slick.css');
+  wp_register_style('slick-theme', '//cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.1/slick/slick-theme.css');
+  wp_register_style('lightbox-css', get_template_directory_uri() . '/vendors/lightbox/css/lightbox.min.css');
   wp_register_style('totalconstruction', get_template_directory_uri() . '/style.css');
   
   wp_enqueue_style('bootstrap-css');
-  wp_enqueue_style('slick-css');
+  if(is_page('gallery')){
+    wp_enqueue_style('slick-css');
+    wp_enqueue_style('slick-theme');
+    wp_enqueue_style('lightbox-css');
+  }
   wp_enqueue_style('totalconstruction'); 
 }
 
@@ -129,4 +144,24 @@ function totalconstruction_get_bg_img_and_css($page_id, $field){
   $bg_img_and_css['image_css'] = $bg_img_css;
 
   return $bg_img_and_css;
+}
+
+function totalconstruction_get_gallery_images($services_id){
+  $gallery_images = [];
+
+  $image_ids = get_post_meta($services_id, 'gallery', true);
+  if($image_ids){
+  for($i = 0; $i < count($image_ids); $i++){
+    $image = wp_get_attachment_image_src((int)$image_ids[$i], 'full');
+    $gallery_images[$i]['image_url'] = $image[0];
+    //$gallery_images[$i]['image_thumb'] = wp_get_attachment_image_src($image_ids[$i], 'thumbnail');
+    $gallery_images[$i]['image_alt'] = get_post_meta($image_ids[$i], '_wp_attachment_image_alt', true);
+    $gallery_images[$i]['image_caption'] = wp_get_attachment_caption($image_ids[$i]);
+  }
+
+  return $gallery_images;
+}
+else{
+  return false;
+}
 }
