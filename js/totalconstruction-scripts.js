@@ -16,6 +16,7 @@ jQuery(document).ready(function($){
       dots: false,
       centerMode:true,
       focusOnSelect:true,
+      variableWidth:false,
       arrows:true,
       prevArrow:'<button type="button" class="gallery-arrow slick-prev">Previous</button>',
       nextArrow:'<button type="button" class="gallery-arrow slick-next">Next</button>',
