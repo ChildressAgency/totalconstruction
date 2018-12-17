@@ -647,6 +647,7 @@ article h2{
 .slick-slide img{
   margin-left:auto;
   margin-right:auto;
+  max-width:100%;
 }
 .gallery-arrow.slick-prev::before,
 .gallery-arrow.slick-next::before{
